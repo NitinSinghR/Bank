@@ -42,6 +42,8 @@ class BankAcc {
                     logger.log(b1.getBalance());
                     break;
                 }
+                default:
+                    logger.log("Inout error!!");
 
             }
 
