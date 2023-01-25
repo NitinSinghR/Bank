@@ -16,11 +16,7 @@ class BankAcc {
         logger.log("Enter the Balance:");
         int balance = sc.nextInt();
 
-        Boolean loop=true;
-
-        Bank B1 = new Bank(holderName,accountNumber,balance);
-
-        while(loop==true){
+        Bank b1 = new Bank(holderName,accountNumber,balance);
 
             logger.log("choose a option");
             logger.log("1.Deposit \n 2.Withdraw \n 3.Balance\n");
@@ -31,27 +27,24 @@ class BankAcc {
                 {
                     logger.log("Enter the Amount:\n");
                     amount=sc.nextInt();
-                    B1.deposit(amount);
+                    b1.deposit(amount);
                     break;
                 }
                 case 2:
                 {
                     logger.log("Enter the Amount:\n");
                     amount=sc.nextInt();
-                    B1.withdraw(amount);
+                    b1.withdraw(amount);
                     break;
                 }
                 case 3 :
                 {
-                    logger.log(B1.getBalance());
+                    logger.log(b1.getBalance());
                     break;
                 }
-                default:
-                {
-                    loop=false;
-                }
+
             }
-        }
+
         sc.close();
     }
 }
