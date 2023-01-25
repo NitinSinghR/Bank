@@ -8,15 +8,15 @@ class BankAcc {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter the Account Holders Name:");
-        String HolderName = sc.next();
+        String holderName = sc.next();
         System.out.println("Enter the Account Holders Number:");
-        int AccountNumber = sc.nextInt();
+        int accountNumber = sc.nextInt();
         System.out.println("Enter the Balance:");
         int balance = sc.nextInt();
 
         Boolean loop=true;
 
-        Bank B1 = new Bank(HolderName,AccountNumber,balance);
+        Bank B1 = new Bank(holderName,accountNumber,balance);
 
         while(loop==true){
 
