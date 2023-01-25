@@ -1,5 +1,7 @@
 package org.example;
 import java.util.*;
+import java.util.logging.Logger;
+
 
 class BankAcc {
     public static void main(String[] args) {
@@ -7,11 +9,11 @@ class BankAcc {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the Account Holders Name:");
+        logger.log("Enter the Account Holders Name:");
         String holderName = sc.next();
-        System.out.println("Enter the Account Holders Number:");
+        logger.log("Enter the Account Holders Number:");
         int accountNumber = sc.nextInt();
-        System.out.println("Enter the Balance:");
+        logger.log("Enter the Balance:");
         int balance = sc.nextInt();
 
         Boolean loop=true;
@@ -20,28 +22,28 @@ class BankAcc {
 
         while(loop==true){
 
-            System.out.println("choose a option");
-            System.out.println("1.Deposit \n 2.Withdraw \n 3.Balance\n");
+            logger.log("choose a option");
+            logger.log("1.Deposit \n 2.Withdraw \n 3.Balance\n");
             int ch = sc.nextInt();
 
             switch(ch){
                 case 1:
                 {
-                    System.out.println("Enter the Amount:\n");
+                    logger.log("Enter the Amount:\n");
                     amount=sc.nextInt();
                     B1.deposit(amount);
                     break;
                 }
                 case 2:
                 {
-                    System.out.println("Enter the Amount:\n");
+                    logger.log("Enter the Amount:\n");
                     amount=sc.nextInt();
                     B1.withdraw(amount);
                     break;
                 }
                 case 3 :
                 {
-                    System.out.println(B1.getBalance());
+                    logger.log(B1.getBalance());
                     break;
                 }
                 default:
@@ -66,21 +68,21 @@ class Bank extends BankAcc {
 
     public void deposit(int amount) {
         balance += amount;
-        System.out.println("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
+        logger.log("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
     }
 
     public void withdraw(int amount) {
         if (amount > balance) {
-            System.out.println("Insufficient Balance for withdraw!!\n");
+            logger.log("Insufficient Balance for withdraw!!\n");
         }
         else {
             balance -= amount;
-            System.out.println("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
+            logger.log("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
         }
     }
 
     public double getBalance() {
-        System.out.println("Your balance is:");
+        logger.log("Your balance is:");
         return balance;
     }
 }
