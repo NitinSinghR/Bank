@@ -54,19 +54,19 @@ class BankAcc {
     }
 }
 class Bank extends BankAcc {
-    private String Name;
+    private String name;
     private int accNumber;
     private double balance;
 
-    public Bank(String UserName, int AccNumber, double Balance) {
-        this.Name = UserName;
-        this.accNumber = AccNumber;
-        this.balance = Balance;
+    public Bank(String userName, int accNumber, double balance) {
+        this.name = userName;
+        this.accNumber = accNumber;
+        this.balance = balance;
     }
 
     public void deposit(int amount) {
         balance += amount;
-        System.out.println("Hello  "+Name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
+        System.out.println("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
     }
 
     public void withdraw(int amount) {
@@ -75,7 +75,7 @@ class Bank extends BankAcc {
         }
         else {
             balance -= amount;
-            System.out.println("Hello  "+Name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
+            System.out.println("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
         }
     }
 
