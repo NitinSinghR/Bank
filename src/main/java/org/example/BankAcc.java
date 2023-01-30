@@ -83,7 +83,6 @@ class Bank extends BankAcc {
     }
 
     public double getBalance() {
-        //String e="Your balance is:"+ balance;
         return balance;
     }
 }
