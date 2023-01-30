@@ -38,7 +38,7 @@ class BankAcc {
                     break;
                 }
                 case 3: {
-                    l.info(b1.getBalance());
+                    l.info(String.valueOf(b1.getBalance()));
                     break;
                 }
                 default: {
@@ -82,9 +82,9 @@ class Bank extends BankAcc {
         }
     }
 
-    public String getBalance() {
-        String e="Your balance is:"+ balance;
-        return e;
+    public double getBalance() {
+        //String e="Your balance is:"+ balance;
+        return balance;
     }
 }
 
