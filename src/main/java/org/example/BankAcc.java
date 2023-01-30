@@ -38,7 +38,8 @@ class BankAcc {
                     break;
                 }
                 case 3: {
-                    l.info(String.valueOf(b1.getBalance()));
+                    String e=String.valueOf(b1.getBalance());
+                    l.info(e);
                     break;
                 }
                 default: {
