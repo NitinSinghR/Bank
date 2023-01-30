@@ -1,23 +1,30 @@
 package org.example;
 
 import java.util.*;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 class BankAcc {
     public static void main(String[] args) {
         int amount;
+        String holderName = null;
+        int accountNumber = 0;
+        int balance = 0;
 
         Logger l = Logger.getLogger("com.api.jar");
         Scanner sc = new Scanner(System.in);
 
+        try{
         l.info("Enter the Account Holders Name:");
-        String holderName = sc.next();
+        holderName = sc.next();
         l.info("Enter the Account Holders Number:");
-        int accountNumber = sc.nextInt();
+        accountNumber = sc.nextInt();
         l.info("Enter the Balance:");
-        int balance = sc.nextInt();
-
+        balance = sc.nextInt();
+        }catch(InputMismatchException e){
+            l.log(Level.INFO,()->" "+e);
+        }
         Bank b1 = new Bank(holderName, accountNumber, balance);
 
         while(true){
@@ -74,16 +81,15 @@ class Bank extends BankAcc {
             l.info("Insufficient Balance for withdraw!!\n");
         }
         else {
-            try {
                 balance -= amount;
-            }finally {
                 String f="Hello  " + name + "\nYour current balance for account  " + accNumber + "  is  " + balance;
                 l.info(f);
-            }
         }
     }
 
+
     public double getBalance() {
+
         return balance;
     }
 }
