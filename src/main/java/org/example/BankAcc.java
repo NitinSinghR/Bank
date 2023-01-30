@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -63,7 +64,8 @@ class Bank extends BankAcc {
 
     public void deposit(int amount) {
         balance += amount;
-        l.info("Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance);
+        String g="Hello  "+name+"\nYour current balance for account  "+accNumber+ "  is  "+balance;
+        l.info(g);
     }
 
     public void withdraw(int amount) {
@@ -74,14 +76,14 @@ class Bank extends BankAcc {
             try {
                 balance -= amount;
             }finally {
-                l.info("Hello  " + name + "\nYour current balance for account  " + accNumber + "  is  " + balance);
+                String f="Hello  " + name + "\nYour current balance for account  " + accNumber + "  is  " + balance;
+                l.info(f);
             }
         }
     }
 
     public String getBalance() {
-        l.info("Your balance is:");
-        String e=String.valueOf(balance);
+        String e="Your balance is:"+ String.valueOf(balance);
         return e;
     }
 }
